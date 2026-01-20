@@ -34,7 +34,7 @@ class AuthManager {
         }
       })
 
-      const symbol = process.env.SYMBOL || "SOFI"
+      const symbol = process.env.SYMBOL
       await page.goto(
         `${process.env.DOMAIN}/stocks/quotes/${symbol}/interactive-chart`,
         { waitUntil: "domcontentloaded" },

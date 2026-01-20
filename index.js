@@ -3,7 +3,7 @@ import { runHistoricalData } from "./runHistoricalData.js"
 import { runLatestData } from "./runLatestData.js"
 import { shutdown } from "./helper.js"
 
-const SYMBOL = process.env.SYMBOL || "SOFI"
+const SYMBOL = process.env.SYMBOL
 
 process.on("SIGINT", async () => {
   console.log("\nSIGINT received. Shutting down gracefully...")
