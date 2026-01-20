@@ -37,7 +37,7 @@ export function parseLine(line, symbol) {
 }
 
 export function rowToComparable(row) {
-  return (row.date + row.time).replace(/[-:]/g, "") + "00"
+  return (row.datetime).replace(/[-:\s]/g, "") + "00"
 }
 
 export async function getResumeEnd(symbol) {

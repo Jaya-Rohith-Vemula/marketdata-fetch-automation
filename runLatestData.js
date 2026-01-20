@@ -51,11 +51,12 @@ export async function runLatestData(symbol, interval = 2000) {
 
     // paginate backward using OLDEST row in this batch
     const oldest = parsed[parsed.length - 1]
-    end = rowToComparable(oldest.datetime)
+    console.log("oldest", oldest)
+    end = rowToComparable(oldest)
 
-    // safety stop: if page < maxrecords, no more pages
-    if (parsed.length < 5000) {
-      console.log("Last page reached")
+    // safety stop: if new rows < parsed rows, no more pages
+    if (latestEnd && newRows.length < parsed.length) {
+      console.log("Overlap with existing DB detected, stopping")
       break
     }
   }

@@ -30,7 +30,7 @@ export async function runHistoricalData(symbol, interval = 2000) {
     })
 
     // FIRST row → next end
-    end = rowToComparable(parsed[0].datetime)
+    end = rowToComparable(parsed[0])
 
     console.log(`Inserted ${parsed.length} rows, next end=${end}`)
 
